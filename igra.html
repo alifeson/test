@@ -1,0 +1,57 @@
+<style>
+h1 {
+	/*font-family: */
+	color: #ee0000;
+	font-size: 50px;
+	/*margin:10px;*/
+	/*padding:10px;*/
+	/*border: solid gray 3px;*/
+}
+
+#myCoolDiv {
+	font-size: 30px;
+}
+
+#task {
+	font-size: 25px;
+}
+
+#result {
+	font-size: 22px;
+	padding: 7px;
+}
+
+img {
+	width:300px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<h1>IGRA</h1>
+
+<img src="https://s3.amazonaws.com/user-media.venngage.com/287617-9164cc844ceb47817054cf5f1b907e5b.jpg" />
+
+<div id="task"></div>
+<input id="result" />
+<input id="ok" type="button" value="OK" />
+
+<script>
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+var int1 = getRandom(1, 1000);
+var int2 = getRandom(1, 1000);
+
+$("#task").html(int1 + ' + ' + int2);
+
+$("#ok").click(function () {
+	if ($('#result').val() == int1+int2) {
+		alert("yep");
+	} else {
+		alert("nope");
+	}
+	location.reload();
+});
+</script>
